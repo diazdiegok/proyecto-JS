@@ -98,14 +98,6 @@ while (pregunta.toUpperCase() === "SI") {
             break;
     }
 
-    // Se agrega juego al array juegosNovedades
-    juegosNovedades.push({
-        id: 9,
-        nombre: "Deadpool",
-        tipo: "Accion",
-        precio: "2700"
-    })
-
     pregunta = prompt("¿Desea agregar otro juego?");
 
     if (pregunta.toUpperCase() === "NO") {
@@ -115,7 +107,16 @@ while (pregunta.toUpperCase() === "SI") {
 
 }
 
+// Se agrega juego al array juegosNovedades
+juegosNovedades.push({
+    id: 9,
+    nombre: "Deadpool",
+    tipo: "Accion",
+    precio: "2700"
+})
+
 // Se agrega al array agregarAlCarrito
 function agregarAlCarrito(producto) {
     carritoCompras.push(producto)
 }
+console.log(carritoCompras);
