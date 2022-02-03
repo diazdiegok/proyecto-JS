@@ -55,55 +55,15 @@ const juegosNovedades = [{
 while (pregunta.toUpperCase() === "SI") {
 
     let eleccion = Number(prompt("Que juego desea agregar? \n1 - Dying light 2 \n2 - Elden right \n3 - Gran turismo 7 \n4 - Horizon forbidden \n5 - Sifu \n6 - Wwe 2K22 \n7 - Fifa 22 \n8 - Nba 2K22"));
-    switch (eleccion) {
-        case 1:
-            console.log(juegosNovedades[0]);
-            agregarAlCarrito(juegosNovedades[0]);
-            break;
-        case 2:
-            console.log(juegosNovedades[1]);
-            agregarAlCarrito(juegosNovedades[1]);
-            break;
-        case 3:
-            console.log(juegosNovedades[2]);
-            agregarAlCarrito(juegosNovedades[2]);
-            break;
-        case 4:
-            console.log(juegosNovedades[3]);
-            agregarAlCarrito(juegosNovedades[3]);
-            break;
-        case 5:
-            console.log(juegosNovedades[4]);
-            agregarAlCarrito(juegosNovedades[4]);
-            break;
-        case 6:
-            console.log(juegosNovedades[5]);
-            agregarAlCarrito(juegosNovedades[5]);
-            break;
-        case 7:
-            console.log(juegosNovedades[6]);
-            agregarAlCarrito(juegosNovedades[6]);
-            break;
-        case 8:
-            console.log(juegosNovedades[7]);
-            agregarAlCarrito(juegosNovedades[7]);
-            break;
-        case 9:
-            console.log(juegosNovedades[8]);
-            agregarAlCarrito(juegosNovedades[8]);
-            break;
 
-        default:
-            console.error("Selección incorrecta");
-            break;
-    }
 
     pregunta = prompt("¿Desea agregar otro juego?");
 
     if (pregunta.toUpperCase() === "NO") {
         alert("Nos vemos, gracias por sus consultas");
-        console.log(juegosNovedades);
     }
+
+    buscar(eleccion);
 
 }
 
@@ -115,8 +75,22 @@ juegosNovedades.push({
     precio: "2700"
 })
 
+console.log(juegosNovedades);
+
 // Se agrega al array agregarAlCarrito
 function agregarAlCarrito(producto) {
     carritoCompras.push(producto)
 }
 console.log(carritoCompras);
+
+// se usa el metodo find para buscar en el array segun la condicion
+
+function buscar(eleccion) {
+    let juego = juegosNovedades.find(item => item.id == eleccion)
+    console.log(juego);
+    agregarAlCarrito(juego)
+    if (juego == undefined) {
+        alert('el producto no fue en contrado en la base de datos!')
+
+    }
+}
