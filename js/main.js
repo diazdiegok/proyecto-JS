@@ -1,7 +1,3 @@
-let pregunta = prompt("Bienvenidos a Juegos Digitales PS, ¿Desea agregar un juego a su carrito?");
-
-const carritoCompras = []
-
 const juegosNovedades = [{
         id: 1,
         nombre: "Dying light 2",
@@ -52,45 +48,27 @@ const juegosNovedades = [{
     },
 ]
 
-while (pregunta.toUpperCase() === "SI") {
+let btnAgregar = document.getElementsByClassName('agregar')
+    // console.log(btnAgregar);
 
-    let eleccion = Number(prompt("Que juego desea agregar? \n1 - Dying light 2 \n2 - Elden right \n3 - Gran turismo 7 \n4 - Horizon forbidden \n5 - Sifu \n6 - Wwe 2K22 \n7 - Fifa 22 \n8 - Nba 2K22"));
-
-
-    pregunta = prompt("¿Desea agregar otro juego?");
-
-    if (pregunta.toUpperCase() === "NO") {
-        alert("Nos vemos, gracias por sus consultas");
-    }
-
-    buscar(eleccion);
-
+for (const boton of btnAgregar) {
+    // console.log(boton.id);
+    boton.addEventListener('click', () => {
+        let agregar = juegosNovedades.find(item => item.id == boton.id)
+        console.log(agregar);
+        agregarCarrito(agregar)
+    })
 }
 
-// Se agrega juego al array juegosNovedades
-juegosNovedades.push({
-    id: 9,
-    nombre: "Deadpool",
-    tipo: "Accion",
-    precio: "2700"
-})
-
-console.log(juegosNovedades);
-
-// Se agrega al array agregarAlCarrito
-function agregarAlCarrito(producto) {
-    carritoCompras.push(producto)
-}
-console.log(carritoCompras);
-
-// se usa el metodo find para buscar en el array segun la condicion
-
-function buscar(eleccion) {
-    let juego = juegosNovedades.find(item => item.id == eleccion)
-    console.log(juego);
-    agregarAlCarrito(juego)
-    if (juego == undefined) {
-        alert('el producto no fue en contrado en la base de datos!')
-
-    }
+function agregarCarrito(agregar) {
+    let contenedorCarrito = document.getElementById('contenedor-carrito')
+    contenedorCarrito.innerHTML +=
+        `                           
+                                    <ul class=listaAgregados>
+                                    <li>${agregar.nombre}</li>
+                                    <li>${agregar.tipo}</li>
+                                    <li>$${agregar.precio}</li>
+                                    </ul>
+                                    <hr>
+    `
 }

@@ -43,6 +43,13 @@ h2 {
     font-family: 'Times New Roman', Times, serif;
 }
 
+h3 {
+    text-align: center;
+    margin-top: 100px !important;
+    font-weight: bold !important;
+    margin-bottom: 50px !important;
+}
+
 nav {
     margin-bottom: 60px;
 }
@@ -97,4 +104,21 @@ footer ul li a {
     width: 40%;
     text-align: center;
     margin: auto;
+}
+
+.listaAgregados {
+    display: flex;
+    list-style-type: none;
+    justify-content: space-around;
+}
+
+ol,
+ul {
+    padding-left: 0rem !important;
+}
+
+@media screen and (max-width: 480px) {
+    #galeria div div img {
+        width: 65%;
+    }
 }
