@@ -48,6 +48,7 @@ h3 {
     margin-top: 100px !important;
     font-weight: bold !important;
     margin-bottom: 50px !important;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 nav {
@@ -60,6 +61,14 @@ section div div ul {
 }
 
 section p {
+    text-align: center;
+}
+
+table thead tr th {
+    text-align: center;
+}
+
+tr td {
     text-align: center;
 }
 
@@ -106,10 +115,11 @@ footer ul li a {
     margin: auto;
 }
 
-.listaAgregados {
-    display: flex;
-    list-style-type: none;
-    justify-content: space-around;
+.tablaAgregados {
+    text-align: center;
+    border: 4px solid white;
+    border-collapse: collapse;
+    width: 100%;
 }
 
 ol,

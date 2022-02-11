@@ -49,26 +49,35 @@ const juegosNovedades = [{
 ]
 
 let btnAgregar = document.getElementsByClassName('agregar')
-    // console.log(btnAgregar);
+let btnQuitar = document.getElementsByClassName('quitar')
 
 for (const boton of btnAgregar) {
-    // console.log(boton.id);
+
     boton.addEventListener('click', () => {
         let agregar = juegosNovedades.find(item => item.id == boton.id)
-        console.log(agregar);
         agregarCarrito(agregar)
+
     })
 }
 
 function agregarCarrito(agregar) {
-    let contenedorCarrito = document.getElementById('contenedor-carrito')
-    contenedorCarrito.innerHTML +=
-        `                           
-                                    <ul class=listaAgregados>
-                                    <li>${agregar.nombre}</li>
-                                    <li>${agregar.tipo}</li>
-                                    <li>$${agregar.precio}</li>
-                                    </ul>
-                                    <hr>
-    `
+
+    let contenedorCarrito = document.getElementById('tablaCarrito')
+    let tr = document.createElement('tr')
+    tr.innerHTML +=
+        `                  
+                                    <td>${agregar.id}</td>
+                                    <td>${agregar.nombre}</td>
+                                    <td>${agregar.tipo}</td>
+                                    <td>$${agregar.precio}</td>
+                                    <td><button id="quitar${agregar.id}" type="button" class="btn btn-danger">X</button></td>
+                                       `
+    contenedorCarrito.appendChild(tr)
+
+    let btnQuitar = document.getElementById(`quitar${agregar.id}`)
+
+    btnQuitar.addEventListener('click', () => {
+        btnQuitar.parentElement.parentElement.remove()
+
+    })
 }
