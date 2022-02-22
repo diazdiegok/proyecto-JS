@@ -68,10 +68,7 @@ for (const boton of btnAgregar) {
         if (existe) {
             carrito = carrito.map(item => {
                 if (item.id == boton.id) {
-                    const id = item.id
-                    const nombre = item.nombre
-                    const tipo = item.tipo
-                    const precio = item.precio
+                    const { id, nombre, tipo, precio } = item
                     const cantidad = item.cantidad + 1
                     const productoActualizado = {
                         id: id,
