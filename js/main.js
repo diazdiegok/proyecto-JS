@@ -62,8 +62,12 @@ let btnQuitar = document.getElementsByClassName('quitar')
 let contenedorCarrito = document.querySelector("#contenedor-carrito")
 
 for (const boton of btnAgregar) {
-
     boton.addEventListener('click', () => {
+        Swal.fire({
+            title: '¡Agregado al carrito! 🤩 🎮',
+            icon: 'success',
+            confirmButtonText: 'Cerrar'
+        })
         const existe = carrito.some(item => item.id == boton.id)
         if (existe) {
             carrito = carrito.map(item => {

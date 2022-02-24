@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--ANIMATIONS-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/oov2wcw.css">
+    <!--SweetAlert2-->
+    <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
     <!--BOOTSTRAP-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <!--CSS-->
@@ -35,6 +38,7 @@
                         </li>
                     </ul>
                     <form class="d-flex">
+                        <a class="navbar-brand" href="./sections/carrito.html"><img src="./img/carrito.jpg" width="45" height="45" alt="carrito de compras"></a>
                         <input class="form-control me-2" type="search" aria-label="Search">
                         <button class="btn btn-outline-success" type="submit">Buscar</button>
                     </form>
@@ -86,23 +90,6 @@
 
         </section>
 
-        <h3> Detalles del pedido: </h3>
-
-        <table class="table table-dark table-bordered border-light content">
-            <thead>
-                <tr>
-                    <th scope="col">ID:</th>
-                    <th scope="col">Nombre:</th>
-                    <th scope="col">Categoría:</th>
-                    <th scope="col">Precio:</th>
-                    <th scope="col">Cantidad:</th>
-                    <th scope="col">Quitar</th>
-                </tr>
-            </thead>
-            <tbody id="contenedor-carrito">
-            </tbody>
-        </table>
-
         <footer>
             <ul>
                 <li>
@@ -123,6 +110,8 @@
 
 
 
+    <!--SCRIPT SweetAlert2-->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
     <!--SCRIPT BOOTSTRAP-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <!--SCRIPT-->

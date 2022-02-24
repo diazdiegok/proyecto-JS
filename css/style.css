@@ -39,7 +39,6 @@ h2 {
     margin-bottom: 50px !important;
     font-weight: bold !important;
     text-align: center;
-    text-decoration: underline;
     font-family: 'Times New Roman', Times, serif;
 }
 
@@ -129,5 +128,8 @@ ul {
 @media screen and (max-width: 480px) {
     #galeria div div img {
         width: 65%;
+    }
+    .table thead {
+        font-size: 10px;
     }
 }
